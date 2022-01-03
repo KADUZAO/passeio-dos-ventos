@@ -1,0 +1,72 @@
+//PALET START
+    $color-primary: #0a2769;
+    $color-secondary: #fff;
+    $color-terciary: #4a99d1;
+    $color-terciary-dark: #2091e2;
+//PALET END
+
+//FONT START
+    @import './fonts';
+
+    //<AMISI>
+        $font-amisiBlack: 'AmisiBlack', sans-serif;
+        $font-amisiBold: 'AmisiBold', sans-serif;
+    //</AMISI>
+
+    //<GOTHAM>
+        $font-gothamBlack: 'GothamBlack', sans-serif;
+        $font-gothamBold: 'GothamBold', sans-serif;
+    //</GOTHAM>
+//FONT END
+
+//ELEMENTS START
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 540px;
+        margin: auto;
+    }
+
+    .amisiBlack {
+        font-family: $font-amisiBlack;
+    }
+
+    .amisiBold {
+        font-family: $font-amisiBold;
+    }
+
+    .gothamBlack {
+        font-family: $font-gothamBlack;
+    }
+
+    .gothamBold {
+        font-family: $font-gothamBold;
+    }
+
+    .button {
+        background-color: $color-primary;
+        font-size: 1.25rem;
+        width: fit-content;
+        margin: auto;
+        padding: 0.8rem 2.5rem;
+        border-radius: 1rem;
+        font-family: $font-amisiBold;
+        animation: button 3s ease infinite;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    @keyframes button {
+        0%, 100% {
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        }
+
+        50% {
+            transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        }
+    }
+//ELEMENTS END

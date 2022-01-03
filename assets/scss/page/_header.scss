@@ -1,0 +1,208 @@
+header {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        height: 100%;
+        justify-content: space-between;
+        padding-top: 3rem;
+
+        .logo {
+            width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .text {
+            p {
+                color: $color-primary;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .scroll {
+            height: 3.5rem;
+            width: 1.5rem;
+            border: 2px solid $color-primary;
+            border-radius: 1rem;
+            position: relative;
+            display: block;
+            animation: scrollbox 3s ease infinite;
+            opacity: 0;
+            margin-bottom: -50%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 90%;
+                height: 1rem;
+                border-radius: 50%;
+                background: $color-terciary;
+                bottom: 2.5%;
+                left: 7.085%;
+                z-index: 1;
+                animation: scrollcontent 3s ease infinite;
+            }
+
+            @keyframes scrollcontent {
+                0% {
+                    bottom: 2.5%;
+                }
+
+                100% {
+                    bottom: 62.5%;
+                }
+            }
+        }
+
+        @keyframes scrollbox {
+            25% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .wave {
+            width: 100vw;
+
+            img {
+                display: grid;
+                width: 100%;
+            }
+        }
+    }
+
+    .nuvem {
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+
+        img {
+            width: 100%;
+        }
+
+        &#nuvem1 {
+            width: 40%;
+            top: 0;
+            left: -50%;
+            animation: nuvem 9s linear infinite;
+        }
+
+        @keyframes nuvem {
+            0% {
+                transform: matrix(1,0,0,1,-200,0);
+            }
+
+            100% {
+                transform: matrix(1,0,0,1,600,0);
+            }
+        }
+
+        &#nuvem2 {
+            width: 50%;
+            top: 10%;
+            right: -35%;
+            animation: nuvem_02 14s ease-in-out infinite;
+        }
+
+        @keyframes nuvem_02 {
+            0% {
+                transform: matrix(1,0,0,1,300,0);
+            }
+
+            100% {
+                transform: matrix(1,0,0,1,-600,0);
+            }
+        }
+
+        &#nuvem3 {
+            width: 40%;
+            top: 35%;
+            left: -50%;
+            animation: nuvem_03 11s linear infinite;
+        }
+
+        @keyframes nuvem_03 {
+            0% {
+                transform: matrix(1,0,0,1,-200,0);
+            }
+
+            100% {
+                transform: matrix(1,0,0,1,600,0);
+            }
+        }
+
+        &#nuvem4 {
+            width: 50%;
+            top: 47%;
+            right: -30%;
+            animation: nuvem_04 16s linear infinite;
+        }
+
+        @keyframes nuvem_04 {
+            0% {
+                transform: matrix(1,0,0,1,300,0);
+            }
+
+            100% {
+                transform: matrix(1,0,0,1,-600,0);
+            }
+        }
+    }
+
+    .paraquedas {
+        position: absolute;
+        z-index: -2;
+
+        img {
+            width: 100%;
+        }
+
+        &#paraquedas1 {
+            right: -18%;
+            top: 22%;
+            width: 39%;
+            transform: matrix(-1,0,0,1,0,0);
+            animation: paraquedas 7s linear infinite;
+        }
+
+        @keyframes paraquedas {
+            0%, 100% {
+                transform: matrix(-1,0,0,1,0,0);
+            }
+
+            50% {
+                transform: matrix(-1,0,0,1,10,-25);
+            }
+        }
+
+        &#paraquedas2 {
+            left: -17%;
+            top: 11%;
+            width: 39%;
+            animation: paraquedas_02 7s linear infinite;
+        }
+
+        @keyframes paraquedas_02 {
+            0%, 100% {
+                transform: matrix(1,0,0,1,0,0);
+            }
+
+            50% {
+                transform: matrix(1,0,0,1,-10,-25);
+            }
+        }
+    }
+}

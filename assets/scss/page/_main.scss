@@ -1,0 +1,486 @@
+main {
+    .container#container1 {
+        padding: 2rem 0;
+
+        .title {
+            width: 70%;
+            margin: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .text {
+            margin-top: 1.5rem;
+
+            p {
+                font-size: 1.25rem;
+                color: $color-primary;
+            }
+        }
+    }
+
+    .paraquedas1 {
+        height: 309px;
+        margin-top: -10rem;
+        position: relative;
+
+        &.paraquedas3 {
+            height: 360px;
+
+            .back {
+                background: linear-gradient(to top, $color-terciary-dark, $color-secondary);
+            }
+        }
+
+        .back {
+            position: absolute;
+            min-height: 100px;
+            width: 100%;
+            z-index: -1;
+            background: linear-gradient(to top, $color-primary, $color-secondary);
+            bottom: 0;
+        }
+
+        .image {
+            position: absolute;
+            bottom: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    #container2 {
+        background: $color-primary;
+        padding-bottom: 9rem;
+
+        .container {
+            article.text {
+                .title.amisiBlack {
+                    color: #fff;
+                    font-size: 1.75rem;
+                    margin-bottom: 1rem;
+                }
+
+                p.text {
+                    color: #fff;
+                    font-size: 1.15rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            article.before-video {
+                p.text {
+                    color: #fff;
+                    font-size: 1.15rem;
+                    margin-bottom: 0.75rem;
+                }
+            }
+
+            #video {
+                display: flex;
+                justify-content: center;
+                width: 90%;
+                margin-bottom: 0.5rem;
+        
+                .video {
+                    display: flex;
+                    justify-content: center;
+                    width: 640px;
+                    max-width: 100%;
+                    height: 360px;
+                    background-color: $color-secondary;
+        
+                    @media screen and (max-width: 720px){
+                        & {
+                            height: 13.6rem;
+                        }
+                    }
+                    
+                    @media screen and (max-width: 300px){
+                        & {
+                            height: 10rem;
+                        }
+                    }
+                }
+            }
+
+            article.after-video {
+                p.text {
+                    color: #fff;
+                    font-size: 1.15rem;
+                }
+
+                .logos {
+                    width: 8rem;
+                    margin: auto;
+                    margin-top: 0.75rem;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .paraquedas2 {
+        width: 100%;
+        margin-top: -10rem;
+
+        animation: paraquedistas 6s ease infinite;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @keyframes paraquedistas {
+        0%, 100% {
+            transform: matrix(1,0,0,1,0,0);
+        }
+
+        25% {
+            transform: matrix(1,0,0,1,0,-10);
+        }
+
+        50% {
+            transform: matrix(1,0,0,1,0,10);
+        }
+
+        75% {
+            transform: matrix(1,0,0,1,0,-10);
+        }
+    }
+
+    .container#container3 {
+        color: $color-primary;
+        font-size: 1.1rem;
+
+        @media screen and (min-width: 780px){
+            font-size: 1.5rem;
+        }
+
+        .moments {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+            width: 91%;
+            margin: 2rem auto;
+
+            .moment {
+                width: 100%;
+                height: 35vw;
+                background: $color-primary;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .container#container4 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+
+        .title {
+            width: 90%;
+            margin-bottom: 1.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .depoiment {
+            width: 100%;
+            margin-bottom: 1.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    #container5 {
+        background: $color-terciary-dark url(../../img/fundo/paraquedasplus.png);
+        background-position: bottom;
+        background-size: 100%;
+        background-repeat: repeat;
+        padding-top: 1rem;
+
+        .container {
+            & > .title {
+                width: 95%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .cards {
+                width: 95%;
+
+                .card {
+                    width: 100%;
+                    height: 450px;
+                    margin-bottom: 1.5rem;
+                    perspective: 7000px;
+
+                    .card__inner {
+                        width: 100%;
+                        height: 100%;
+                        transition: transform 1s;
+                        transform-style: preserve-3d;
+                        position: relative;
+
+                        &.is-flipped {
+                            transform: rotateY(180deg);
+
+                            .card__face.card__face--front {
+                                .card__content {
+                                    .button {
+                                        z-index: -1;
+                                    }
+                                }
+                            }
+                        }
+
+                        .card__face {
+                            position: absolute;
+                            border-radius: 1rem;
+                            width: 100%;
+                            backface-visibility: hidden;
+                            overflow: hidden;
+
+                            i {
+                                position: absolute;
+                                top: 10px;
+                                right: 8px;
+                                width: 43px;
+                                padding: 0.25rem;
+                                border-radius: 50%;
+                                border: 4px solid $color-primary;
+                                color: $color-primary;
+                                font-size: 2rem;
+                            }
+
+                            &.card__face--front {
+                                background: $color-secondary;
+
+                                .title {
+                                    display: grid;
+                                    margin: auto;
+                                    width: 100%;
+                                    justify-items: center;
+                                    min-height: 268px;
+                                    align-items: center;
+
+                                    &.three {
+                                        img {
+                                            width: 70%;
+                                        }
+                                    }
+
+                                    &.four {
+                                        img {
+                                            width: 70%;
+                                        }
+                                    }
+
+                                    img {
+                                        width: 60%;
+                                        padding: 3rem 0;
+                                    }
+                                }
+
+                                .card__content {
+                                    width: 100%;
+                                    background: $color-primary;
+                                    padding-bottom: 1rem;
+                                    border-radius: 1rem;
+
+                                    .price__parcelado {
+                                        color: #fff;
+                                        font-size: 4.5rem;
+                                        
+                                        &.alt {
+                                            font-size: 4rem;
+                                        }
+                                    }
+
+                                    .avista__avista {
+                                        color: #fff;
+                                        font-size: 1.25rem;
+                                    }
+
+                                    .button {
+                                        background: $color-terciary-dark;
+                                        border-radius: 0.5rem;
+                                        box-shadow: 0px 0px 10px rgba(32, 145, 226, 0.686);
+                                        margin-top: 1rem;
+                                        padding: 0.8rem 3.5rem;
+                                        padding-top: 0.35rem;
+                                        transition: 0.3s;
+                                    }
+                                }
+                            }
+
+                            &.card__face--back {
+                                transform: rotateY(180deg);
+                                background: $color-primary;
+
+                                i {
+                                    color: $color-terciary;
+                                    border-color: $color-terciary;
+                                }
+                                
+                                .sla {
+                                    min-height: 270px;
+                                    overflow: hidden;
+                                    display: flex;
+                                    align-items: center;
+
+                                    .container-text {
+                                        overflow: hidden;
+                                        max-height: 160px;
+
+                                        .text {
+                                            width: 80%;
+                                            margin: auto;
+                                            max-height: 160px;
+                                            overflow: auto;
+
+                                            &::-webkit-scrollbar-thumb {
+                                                background: #fff;
+                                            }
+        
+                                            p {
+                                                font-size: 1.15rem;
+                                                color: #fff;
+
+                                                strong {
+                                                    font-size: 2rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                .card__content {
+                                    width: 100%;
+                                    background: $color-secondary;
+                                    padding-bottom: 1rem;
+                                    border-radius: 1rem;
+
+                                    .price__parcelado {
+                                        color: $color-primary;
+                                        font-size: 4.5rem;
+
+                                        &.alt {
+                                            font-size: 4rem;
+                                        }
+                                    }
+
+                                    .avista__avista {
+                                        color: $color-primary;
+                                        font-size: 1.25rem;
+                                    }
+
+                                    .button {
+                                        background: $color-primary;
+                                        border-radius: 0.5rem;
+                                        box-shadow: 0px 0px 10px rgba(35, 32, 226, 0.686);
+                                        margin-top: 1rem;
+                                        padding: 0.8rem 3.5rem;
+                                        padding-top: 0.35rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .container#container6 {
+        margin-top: -2rem;
+        overflow: hidden;
+        
+        & > .title {
+            width: 85%;
+            margin-bottom: 1.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .faq {
+            margin-bottom: 1.5rem;
+
+            div.title {
+                max-width: 760px;
+                margin: auto;
+                font-size: 1.2rem;
+                background-color: $color-primary;
+                color: #fff;
+                border-radius: 0.5rem;
+                padding: 7px 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                transition: all ease 0.4s;
+
+                .seta {
+                    display: grid;
+                    width: 1.5rem;
+                    transform: rotate(180deg);
+                    transition: all 1s;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &.active {
+                    & + .resposta {
+                        max-height: 230px;
+                        padding: 10px 10px;
+                        color: inherit;
+                        border: 3px solid $color-primary;
+                        border-radius: 0 0 0.5rem 0.5rem;
+                        max-width: 70%;
+                        border-top: 0;
+                        opacity: 1;
+                    }
+
+                    .seta {
+                        transform: rotate(0);
+                    }
+                }
+            }
+            .resposta {
+                font-size: 1rem;
+                transition: color ease 1s, padding 1s, max-height ease 0.4s, border ease 0.4s, opacity ease 0.4s;
+                max-height: 0;
+                padding: 0 15px;
+                color: rgba(0,0,0,0);
+                max-width: 70%;
+                margin: auto;
+                border: 3px solid $color-primary;
+                opacity: 0;
+            }
+        }
+    }
+}
